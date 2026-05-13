@@ -20,7 +20,6 @@ Thumbs.db
 .claude/
 
 # Large submission artifacts
-*.mp4
 *.pdf
 *.zip
 

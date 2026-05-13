@@ -23,6 +23,10 @@ All data is simulated client-side. No backend or authentication is required. The
 - **Lucide React** icon set
 - **useReducer + Context API** global state management
 
+## Demo
+
+A screen recording of the prototype walkthrough is included in the repository as `demo.mp4`. It covers all three evaluated workflows: job search and filtering, the 3-step application submission, and document library management.
+
 ## Getting Started
 
 ### Prerequisites
