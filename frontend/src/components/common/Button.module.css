@@ -1,0 +1,79 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.sm { padding: 6px 12px; font-size: 0.8125rem; }
+.md { padding: 9px 18px; font-size: 0.9375rem; }
+.lg { padding: 12px 24px; font-size: 1rem; }
+
+/* Variants */
+.primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.primary:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+}
+.secondary:hover:not(:disabled) {
+  background: var(--color-accent-light);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-accent);
+  border: none;
+}
+.ghost:hover:not(:disabled) {
+  background: var(--color-accent-light);
+}
+
+.danger {
+  background: var(--color-error);
+  color: #fff;
+}
+.danger:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+/* CSS spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,21 @@
+Peer Evaluation
+Submission Name: 
+Effort Points
+
+Ajmain Hyder: 20/20
+Ansh Rai: 20/20
+Arshdeep Sandhu: 20/20
+Zaiyan Nazmul: 20/20
+
+Reflection
+All four group members contributed to the A4 prototype and report. Work was divided as follows:
+
+Ajmain Hyder implemented the shared UI component library (Badge, Button, Modal, StepIndicator, Tag, and Toast components), establishing the visual foundation and design system used across the entire prototype.
+
+Ansh Rai implemented the application layout (AppShell and Sidebar) and the job-browsing experience, including the JobSearch page with live filtering and work authorization toggles and the JobDetail page.
+
+Arshdeep Sandhu implemented the multi-step ApplicationForm, the DocumentLibrary with drag-and-drop upload and version tagging, the MyApplications tracker, and the AppContext state management layer (useReducer) that ties all pages together.
+
+Zaiyan Nazmul implemented the Dashboard landing page. Zaiyan also took primary responsibility for the written report and solely recorded and produced the video presentation of the prototype.
+
+Work was distributed across all deliverables and every member met their responsibilities throughout the assignment.

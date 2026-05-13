@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor / OS artifacts
+.DS_Store
+Thumbs.db
+*.suo
+*.user
+
+# Claude Code
+.claude/
+
+# Large submission artifacts
+*.mp4
+*.pdf
+*.zip
+
+# Vite cache
+.vite/

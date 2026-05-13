@@ -1,0 +1,143 @@
+PROTOTYPE APPROACH REPORT
+TMU Co-op Portal Redesign — CPS 613 / CP 8205
+============================================================
+
+1. WHICH TASKS WERE SELECTED?
+
+Three core tasks were selected for implementation:
+
+  Task 1 — Search and Filter Jobs
+    Users search the job board, apply work authorization filters
+    (international vs. domestic), and browse results.
+
+  Task 2 — Submit a Co-op Application
+    Users select a resume, select a cover letter, review their
+    choices, and submit an application through a three-step form.
+
+  Task 3 — Upload a Document to the Document Library
+    Users upload a new resume or cover letter using a drag-and-drop
+    interface, assign a version label, and confirm the upload.
+
+These three tasks were chosen because they represent the complete
+end-to-end co-op workflow and directly correspond to the pain points
+identified in the A3 cognitive walkthrough (ambiguous eligibility
+filters, unclear submission confirmation, confusing document
+versioning).
+
+
+2. SIMULATED FUNCTIONALITY — WIZARD-OF-OZ OR CODED?
+
+A fully coded, client-side simulation was chosen over a
+Wizard-of-Oz approach. All interactions are implemented in
+React with real state management (useReducer via AppContext).
+
+Simulated (fake) elements include:
+  - Job listings: hardcoded array in fakeData.js (no real API)
+  - Document storage: in-memory React state (no file system access)
+  - File upload: captures filename only, no actual file is stored
+  - PDF preview: a styled gray placeholder box, not a real renderer
+  - Application submission: 1.5-second fake loading delay, then
+    writes to in-memory state
+  - Application reference number: hardcoded "APP-2026-0047"
+  - Notifications: hardcoded initial state, markable as read
+
+A Wizard-of-Oz approach was ruled out because:
+  - The primary evaluation questions concern interface clarity and
+    feedback quality, not backend correctness. Real interactivity
+    (state changes, step transitions, confirmation screens) is
+    essential to observe genuine user behavior.
+  - A scripted/click-through approach (e.g., PowerPoint) cannot
+    simulate the live filter narrowing, scroll restoration, or
+    multi-step form validation that are central to the redesign.
+
+
+3. HOW IMPORTANT IS APPEARANCE?
+
+Appearance is moderately-to-highly important for this prototype,
+for two specific reasons:
+
+  a) The A3 observations included several visual/legibility issues:
+     eligibility badges were ambiguous, document status labels were
+     confusing, and the confirmation screen was too easy to miss.
+     A lo-fi wireframe would not allow testers to evaluate whether
+     the redesigned visual treatments (explicit text badges, green
+     confirmation panel, color-coded document tags) actually resolve
+     these issues.
+
+  b) The target users are university students applying to real jobs.
+     A prototype that looks unfinished may cause participants to
+     mentally discount the interface and offer feedback about
+     aesthetics rather than usability.
+
+However, appearance effort was bounded deliberately:
+  - No real logos, photography, or production-quality illustration
+  - Google Fonts (Fraunces, DM Sans) give institutional credibility
+    at zero design cost
+  - A warm off-white color palette and consistent spacing convey
+    "real product" feel without custom graphic design work
+  - All components are hand-built CSS — no UI library overhead
+
+The goal was "convincing enough that participants behave naturally,"
+not "pixel-perfect enough to ship."
+
+
+4. PHYSICAL / NON-GRAPHICAL ELEMENTS — MOCKUP AUGMENTATION?
+
+The TMU Co-op Portal is a purely graphical, browser-based interface.
+There are no physical elements (hardware, tangible UI, kiosk
+components, etc.) in scope.
+
+Therefore, no physical mockup augmentation is needed or applicable.
+All evaluation artifacts are digital and can be accessed through
+a standard web browser at http://localhost:5173.
+
+
+5. PROTOTYPING TOOL CHOICE AND RATIONALE
+
+Tools chosen:
+  - React 18 + Vite (component framework and dev server)
+  - React Router v6 (client-side page routing)
+  - Plain CSS Modules (scoped styling, no utility framework)
+  - Lucide React (icon set only)
+  - No UI component libraries (MUI, Chakra, Shadcn, etc.)
+
+Rationale:
+
+  React was chosen over static tools (PowerPoint, Figma, HTML/CSS
+  only) because the three tasks require real conditional state:
+    - Filter logic must narrow results live as options are toggled
+    - The multi-step application form must disable "Next" until a
+      selection is made (error prevention heuristic)
+    - The document library must reflect uploads and deletions
+      immediately without page reloads
+
+  These behaviors cannot be scripted in a slide-deck prototype and
+  are central to what the evaluation is testing.
+
+  CSS Modules over Tailwind was chosen to maintain full design
+  control without framework constraints, and because the course
+  requirement prohibits utility-first CSS.
+
+  No UI component libraries were used because pre-built components
+  (e.g., MUI dropdowns, Chakra modals) impose visual defaults that
+  make it harder to implement the specific design decisions being
+  evaluated (e.g., the explicit text eligibility badges, the
+  "Current/Older Version" tag language).
+
+  Vite was retained from the existing project scaffold to avoid
+  toolchain setup time. The existing book-CRUD frontend was replaced
+  in-place, preserving the working dev environment.
+
+Effort trade-offs made:
+  - PDF preview is a placeholder rectangle, not a real renderer
+    (saves significant effort; sufficient to test the interaction)
+  - No authentication screen (not under evaluation; starts on
+    Dashboard directly)
+  - My Applications "View Details" shows a toast ("under
+    development") rather than a full detail page (horizontal
+    coverage only; not a tested task)
+  - Search synonyms are noted via helper text but not implemented
+    with NLP (a label change suffices to test comprehension)
+
+============================================================
+END OF REPORT

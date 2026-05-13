@@ -1,0 +1,320 @@
+.page {
+  padding: 32px 36px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+.stepContent {
+  max-width: 680px;
+}
+
+.stepHeading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.sectionLabel {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+/* Doc selector */
+.docList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.docCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.docCard:hover { border-color: var(--color-accent); }
+.docCardSelected {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+.docRadio { flex-shrink: 0; }
+
+.radioCircle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  transition: all 0.15s ease;
+}
+.radioSelected {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: inset 0 0 0 3px var(--color-surface);
+}
+
+.docInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.docName {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+}
+
+.docMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.versionTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 1px 7px;
+  border-radius: 4px;
+}
+
+.docDate {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.previewBtn {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+.previewBtn:hover {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Older versions */
+.olderSection { margin-top: 8px; }
+
+.olderToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  padding: 4px 0;
+  margin-bottom: 8px;
+}
+.olderToggle:hover { color: var(--color-text-primary); }
+
+/* Step navigation */
+.stepNav {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  align-items: center;
+}
+
+/* Review card */
+.reviewCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.reviewRow {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.reviewRow:last-child { border-bottom: none; }
+
+.reviewLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  min-width: 110px;
+  padding-top: 2px;
+}
+
+.reviewValue {
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.reviewDocRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Document Preview Modal */
+.previewBox {
+  margin-bottom: 12px;
+}
+
+.previewPlaceholder {
+  background: #f1f5f9;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.previewLabel {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.previewFilename {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.previewDate {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.previewNote {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Confirmation state */
+.confirmation {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--color-success-light);
+  border: 1.5px solid #bbf7d0;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.checkIcon {
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  margin-bottom: 16px;
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.confirmTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-success);
+  margin-bottom: 8px;
+}
+
+.confirmSub {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.confirmDocs {
+  background: var(--color-surface);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.confirmDocRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.confirmDocLabel {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.confirmRef {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.confirmActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

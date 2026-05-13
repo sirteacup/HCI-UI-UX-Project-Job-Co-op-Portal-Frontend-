@@ -1,0 +1,20 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.international {
+  background: #DBEAFE;
+  color: var(--color-badge-international);
+}
+
+.domestic {
+  background: #F3E8FF;
+  color: var(--color-badge-domestic);
+}
